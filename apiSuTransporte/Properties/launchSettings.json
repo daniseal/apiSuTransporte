@@ -1,0 +1,75 @@
+{
+  // Define los perfiles de ejecución del proyecto.
+  // Cada perfil indica una forma diferente de iniciar la API.
+  "profiles": {
+
+    // Perfil llamado "http".
+    // Este perfil ejecuta directamente el proyecto usando Kestrel.
+    "http": {
+
+      // Indica que se ejecuta el proyecto actual.
+      "commandName": "Project",
+
+      // Variables de entorno usadas cuando se ejecuta este perfil.
+      "environmentVariables": {
+
+        // Indica que el proyecto corre en modo desarrollo.
+        // Esto permite usar Swagger, mostrar errores detallados, etc.
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+
+      // Muestra mensajes de .NET en la consola al ejecutar.
+      "dotnetRunMessages": true,
+
+      // URL donde se levanta la API usando este perfil.
+      "applicationUrl": "http://localhost:5051"
+    },
+
+    // Perfil llamado "IIS Express".
+    // Este es el perfil que normalmente usas en Visual Studio.
+    "IIS Express": {
+
+      // Indica que se ejecuta usando IIS Express.
+      "commandName": "IISExpress",
+
+      // Hace que Visual Studio abra el navegador automáticamente.
+      "launchBrowser": true,
+
+      // Página que se abre al iniciar el proyecto.
+      // En este caso abre Swagger.
+      "launchUrl": "swagger",
+
+      // Variables de entorno para este perfil.
+      "environmentVariables": {
+
+        // Ejecuta el proyecto en modo desarrollo.
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  },
+
+  // Esquema usado por Visual Studio para validar este archivo.
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+
+  // Configuración específica para IIS Express.
+  "iisSettings": {
+
+    // Desactiva autenticación de Windows.
+    "windowsAuthentication": false,
+
+    // Permite acceso anónimo a la API.
+    "anonymousAuthentication": true,
+
+    // Configuración de puertos de IIS Express.
+    "iisExpress": {
+
+      // URL HTTP del proyecto cuando se ejecuta con IIS Express.
+      "applicationUrl": "http://localhost:62740/",
+
+      // Puerto HTTPS del proyecto.
+      // Por eso tu API abre en:
+      // https://localhost:44300
+      "sslPort": 44300
+    }
+  }
+}
